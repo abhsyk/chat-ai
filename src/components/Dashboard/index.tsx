@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Sidebar from '../Sidebar';
-import Chat from '../Chat';
+import { Sidebar } from '../sidebar';
+import { Chat } from '../chat';
 
 const Dashboard: FC = () => {
   return (
