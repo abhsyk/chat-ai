@@ -1,15 +1,9 @@
 import { FC } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { CustomButton } from '../ui';
 
 const NewChatButton: FC = () => {
-  return (
-    <div className="new_chat_button">
-      <div className="new_chat_button_icon">
-        <AiOutlinePlus color="white" />
-      </div>
-      <p className="new_chat_button_text">New Chat</p>
-    </div>
-  );
+  return <CustomButton mode="newChat" icon={AiOutlinePlus} text="New Chat" />;
 };
 
 export default NewChatButton;
