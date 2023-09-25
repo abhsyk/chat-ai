@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { Messages, NewMessageInput } from '../../chat';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { Content } from '../../../interfaces';
 
 const ChatLogo: FC = () => {
   return (
@@ -10,13 +12,20 @@ const ChatLogo: FC = () => {
 };
 
 const Chat: FC = () => {
+  const { selectedConversationId } = useTypedSelector(
+    (state) => state.dashboards
+  );
+
   return (
     <div className="chat_container">
-      <div className="chat_selected_container">
-        <Messages />
-        <NewMessageInput />
-      </div>
-      {/* <ChatLogo /> */}
+      {!selectedConversationId ? (
+        <ChatLogo />
+      ) : (
+        <div className="chat_selected_container">
+          <Messages />
+          <NewMessageInput />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+interface State {}
+
 const initialState = {
   sessionEstablished: false,
   conversation: [],
