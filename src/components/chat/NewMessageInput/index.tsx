@@ -1,7 +1,7 @@
 import { FC, KeyboardEvent, useState } from 'react';
 import { BsSend } from 'react-icons/bs';
 import { v4 as uuid } from 'uuid';
-import { Content } from '../../../interfaces';
+import { Message } from '../../../interfaces';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { useActions } from '../../../hooks/useActions';
 
@@ -14,7 +14,7 @@ const NewMessageInput: FC = () => {
 
   const proceedMessage = () => {
     // create message obj
-    const message: Content = {
+    const message: Message = {
       id: uuid(),
       content,
       isAiMessage: false,

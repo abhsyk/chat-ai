@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AddMessageAction, SetSelectedConversationIdAction } from '../actions';
-import { Content } from '../../interfaces';
+import { Message } from '../../interfaces';
 
 interface State {
   sessionEstablished: boolean;
   conversations: {
     id: string;
-    messages: Content[];
+    messages: Message[];
   }[];
   selectedConversationId: string | null;
 }

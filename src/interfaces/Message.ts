@@ -1,4 +1,4 @@
-export interface Content {
+export interface Message {
   id: string;
   content: string;
   isAiMessage: boolean;
