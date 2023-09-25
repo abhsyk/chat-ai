@@ -1,12 +1,13 @@
 import { FC } from 'react';
-import NewChatButton from '../NewChatButton';
-import ListItem from '../ListItem';
-import DeleteConvBtn from '../DeleteConvBtn';
+import { NewChatButton, DeleteConvBtn, ListItem } from '../../sidebar';
+import { useActions } from '../../../hooks/useActions';
 
 const Sidebar: FC = () => {
+  const { setSelectedConversationId } = useActions();
+
   return (
     <div className="sidebar_container">
-      <NewChatButton />
+      <NewChatButton onChooseChat={setSelectedConversationId} />
       <DeleteConvBtn />
     </div>
   );

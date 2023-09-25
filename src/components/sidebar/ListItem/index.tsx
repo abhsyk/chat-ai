@@ -3,7 +3,14 @@ import { BsChatLeft } from 'react-icons/bs';
 import { CustomButton } from '../../ui';
 
 const ListItem: FC = () => {
-  return <CustomButton mode="listItem" icon={BsChatLeft} text="History" />;
+  return (
+    <CustomButton
+      mode="listItem"
+      icon={BsChatLeft}
+      text="History"
+      onClick={() => {}}
+    />
+  );
 };
 
 export default ListItem;

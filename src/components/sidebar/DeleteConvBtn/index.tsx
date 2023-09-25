@@ -8,6 +8,7 @@ const DeleteConvBtn: FC = () => {
       mode="delete"
       icon={AiOutlineDelete}
       text="Delete Conversations"
+      onClick={() => {}}
     />
   );
 };
