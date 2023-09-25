@@ -9,7 +9,13 @@ const initialState = {
 const dashboardSlice = createSlice({
   name: 'dashboard',
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedConversationId: (state, action) => {
+      state.selectedConversationId = action.payload;
+    },
+  },
 });
+
+export const { setSelectedConversationId } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

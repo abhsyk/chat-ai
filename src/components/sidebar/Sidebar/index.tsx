@@ -7,7 +7,6 @@ const Sidebar: FC = () => {
   return (
     <div className="sidebar_container">
       <NewChatButton />
-      <ListItem />
       <DeleteConvBtn />
     </div>
   );
