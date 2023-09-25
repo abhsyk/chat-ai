@@ -8,8 +8,8 @@ type Props = {
 };
 
 const TextAnimation: FC<Props> = ({ speed = 20, text }) => {
-  const [placeholder, setPlaceholder] = useState(text[0]); // each char of the text
-  const index = useRef(0); // text index
+  const [placeholder, setPlaceholder] = useState<string>(text[0]); // each char of the text
+  const index = useRef<number>(0); // text index
 
   useEffect(() => {
     const tick = () => {
