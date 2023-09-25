@@ -2,9 +2,15 @@ import { FC, KeyboardEvent, useState } from 'react';
 import { BsSend } from 'react-icons/bs';
 import { v4 as uuid } from 'uuid';
 import { Content } from '../../../interfaces';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useActions } from '../../../hooks/useActions';
 
 const NewMessageInput: FC = () => {
   const [content, setContent] = useState<string>('');
+  const { addMessage } = useActions();
+  const { selectedConversationId } = useTypedSelector(
+    (state) => state.dashboards
+  );
 
   const proceedMessage = () => {
     // create message obj
@@ -15,7 +21,12 @@ const NewMessageInput: FC = () => {
     };
     console.log(message);
 
-    // append the message to the local store (redux)
+    // choose conversation id
+    const conversationId: string =
+      selectedConversationId! === 'new' ? uuid() : selectedConversationId!;
+
+    // append the message to the redux
+    addMessage({ conversationId, message });
 
     // send message to the server
 
