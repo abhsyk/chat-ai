@@ -1,4 +1,4 @@
-import { Message } from '../../interfaces';
+import { Message } from '@backend/types';
 
 export interface SetSelectedConversationIdAction {
   type: string;

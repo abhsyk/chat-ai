@@ -1,9 +1,10 @@
 import { FC, KeyboardEvent, useState } from 'react';
 import { BsSend } from 'react-icons/bs';
 import { v4 as uuid } from 'uuid';
-import { Message } from '../../../interfaces';
+import { Message } from '@backend/types';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { useActions } from '../../../hooks/useActions';
+import { sendConvMessage } from '../../../util/socketConnection';
 
 const NewMessageInput: FC = () => {
   const [content, setContent] = useState<string>('');
@@ -31,6 +32,7 @@ const NewMessageInput: FC = () => {
     setSelectedConversationId(conversationId);
 
     // send message to the server
+    sendConvMessage(message, conversationId);
 
     // reset value of the input
     setContent('');

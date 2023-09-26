@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { CustomButton } from '../../ui';
-import { Message } from '../../../interfaces';
+import { Message } from '@backend/types';
 
 type Props = {
   onChooseChat: (id: Message['id']) => void;
