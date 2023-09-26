@@ -44,9 +44,14 @@ const dashboardSlice = createSlice({
       // if the conversation already exist, push the message obj to the conv array
       conversation?.messages.push(message);
     },
+    setConversations: (state, action) => {
+      state.conversations = action.payload;
+      state.sessionEstablished = true; // loading
+    },
   },
 });
 
-export const { setSelectedConversationId, addMessage } = dashboardSlice.actions;
+export const { setSelectedConversationId, addMessage, setConversations } =
+  dashboardSlice.actions;
 
 export default dashboardSlice.reducer;
