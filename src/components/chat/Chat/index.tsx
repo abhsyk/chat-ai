@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Messages, NewMessageInput } from '../../chat';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { Content } from '../../../interfaces';
 
 const ChatLogo: FC = () => {
   return (

@@ -1,4 +1,4 @@
-import { Content } from '../../interfaces';
+import { Message } from '../../interfaces';
 
 export interface SetSelectedConversationIdAction {
   type: string;
@@ -9,7 +9,7 @@ export interface AddMessageAction {
   type: string;
   payload: {
     conversationId: string;
-    message: Content;
+    message: Message;
   };
 }
 

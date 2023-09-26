@@ -2,12 +2,17 @@ import { FC } from 'react';
 import { BsChatLeft } from 'react-icons/bs';
 import { CustomButton } from '../../ui';
 
-const ListItem: FC = () => {
+type Props = {
+  title: string;
+  onChooseChat?: () => void;
+};
+
+const ListItem: FC<Props> = ({ title, onChooseChat }) => {
   return (
     <CustomButton
       mode="listItem"
       icon={BsChatLeft}
-      text="History"
+      text={title}
       onClick={() => {}}
     />
   );

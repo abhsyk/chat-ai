@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { CustomButton } from '../../ui';
-import { Content } from '../../../interfaces';
+import { Message } from '../../../interfaces';
 
 type Props = {
-  onChooseChat: (id: Content['id']) => void;
+  onChooseChat: (id: Message['id']) => void;
 };
 
 const NewChatButton: FC<Props> = ({ onChooseChat }) => {

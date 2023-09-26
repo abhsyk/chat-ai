@@ -7,6 +7,7 @@ export const useActions = () => {
   const dispatch = useDispatch();
 
   return useMemo(() => {
+    // combine all action creator into obj
     return bindActionCreators(actionCreators, dispatch);
   }, [dispatch]);
 };
