@@ -1,6 +1,6 @@
 import io, { Socket } from 'socket.io-client';
 import { Conversation, Message, SessionData } from '@backend/types';
-import { store, setConversations } from '../state';
+import { store, setConversations, setConversationHistory } from '../state';
 
 let socket: Socket;
 
@@ -24,6 +24,11 @@ export const connectWithSocketServer = () => {
       // store the conversations data sent from the server to redux
       store.dispatch(setConversations(conversations));
     });
+
+    // store the updated conversation sent from the server to redux
+    socket.on('conversation-details', (data: Conversation) => {
+      store.dispatch(setConversationHistory(data));
+    });
   });
 };
 
@@ -35,5 +40,6 @@ export const sendConvMessage = (
   socket.emit('conversation-message', {
     message,
     conversationId,
+    sessionId: localStorage.getItem('sessionId'),
   });
 };

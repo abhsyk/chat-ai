@@ -18,4 +18,9 @@ export interface SetConversationsAction {
   payload: Conversation[];
 }
 
+export interface SetConvesationHistoryAction {
+  type: string;
+  payload: Conversation;
+}
+
 export type Action = SetSelectedConversationIdAction;

@@ -20,8 +20,8 @@ const MessagesList: FC = () => {
               content={m.content}
               isAiMessage={m.isAiMessage}
               // if it is the latest message from AI, make it animation
-              animateText={
-                index === conversation.messages.length - 1 && m.animate!
+              animate={
+                index === conversation.messages.length - 1 && m.isAiMessage!
               }
             />
           ))
