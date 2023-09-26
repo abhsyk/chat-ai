@@ -7,7 +7,7 @@ import { useActions } from '../../../hooks/useActions';
 
 const NewMessageInput: FC = () => {
   const [content, setContent] = useState<string>('');
-  const { addMessage } = useActions();
+  const { addMessage, setSelectedConversationId } = useActions();
   const { selectedConversationId } = useTypedSelector(
     (state) => state.dashboards
   );
@@ -21,12 +21,14 @@ const NewMessageInput: FC = () => {
     };
     console.log(message);
 
-    // choose conversation id
+    // choose conversation id (if it's a new conv, set a new id)
     const conversationId: string =
       selectedConversationId! === 'new' ? uuid() : selectedConversationId!;
 
     // append the message to the redux
     addMessage({ conversationId, message });
+    // preventing new creation
+    setSelectedConversationId(conversationId);
 
     // send message to the server
 

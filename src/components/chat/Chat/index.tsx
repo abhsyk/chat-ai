@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Messages, NewMessageInput } from '../../chat';
+import { MessagesList, NewMessageInput } from '../../chat';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 const ChatLogo: FC = () => {
@@ -21,7 +21,7 @@ const Chat: FC = () => {
         <ChatLogo />
       ) : (
         <div className="chat_selected_container">
-          <Messages />
+          <MessagesList />
           <NewMessageInput />
         </div>
       )}

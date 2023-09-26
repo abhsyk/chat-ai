@@ -6,10 +6,10 @@ import { TextAnimation } from '../../ui';
 type Props = {
   isAiMessage: boolean;
   content: string;
-  // toAnimateText: boolean;
+  animateText: boolean;
 };
 
-const MessageItem: FC<Props> = ({ isAiMessage, content }) => {
+const MessageItem: FC<Props> = ({ isAiMessage, content, animateText }) => {
   return (
     <div
       className="message_container"
@@ -20,8 +20,8 @@ const MessageItem: FC<Props> = ({ isAiMessage, content }) => {
       </div>
       <p className="message_text">
         {
-          // if it is a message from AI, make it animation
-          isAiMessage ? (
+          // if it is the latest message from AI, make it animation
+          isAiMessage && animateText ? (
             <TextAnimation
               speed={20} // ms
               text={content}

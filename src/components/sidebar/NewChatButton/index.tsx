@@ -13,6 +13,7 @@ const NewChatButton: FC<Props> = ({ onChooseChat }) => {
       mode="newChat"
       icon={AiOutlinePlus}
       text="New Chat"
+      // if it's a new conv, create it as "new"
       onClick={() => onChooseChat('new')}
     />
   );
