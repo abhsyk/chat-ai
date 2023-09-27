@@ -23,4 +23,7 @@ export interface SetConvesationHistoryAction {
   payload: Conversation;
 }
 
-export type Action = SetSelectedConversationIdAction;
+export interface DeleteAllConversationsAction {
+  type: string;
+  payload: [];
+}

@@ -43,3 +43,10 @@ export const sendConvMessage = (
     sessionId: localStorage.getItem('sessionId'),
   });
 };
+
+// delete conversation
+export const deleteAllConvs = () => {
+  socket.emit('conversations-delete', {
+    sessionId: localStorage.getItem('sessionId'),
+  });
+};

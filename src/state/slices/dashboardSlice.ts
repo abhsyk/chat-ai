@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   AddMessageAction,
+  DeleteAllConversationsAction,
   SetConversationsAction,
   SetConvesationHistoryAction,
   SetSelectedConversationIdAction,
@@ -67,6 +68,10 @@ const dashboardSlice = createSlice({
         conversation.messages = messages;
       }
     },
+    deleteAllConversations: (state, action: DeleteAllConversationsAction) => {
+      state.conversations = action.payload;
+      state.selectedConversationId = null;
+    },
   },
 });
 
@@ -75,6 +80,7 @@ export const {
   addMessage,
   setConversations,
   setConversationHistory,
+  deleteAllConversations,
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;
