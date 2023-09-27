@@ -9,10 +9,15 @@ const Sidebar: FC = () => {
 
   return (
     <div className="sidebar_container">
-      <NewChatButton onChooseChat={setSelectedConversationId} />
+      <NewChatButton onSelect={setSelectedConversationId} />
       {conversations
         ? conversations.map((c) => (
-            <ListItem key={c.id} title={c.messages[0].content} />
+            <ListItem
+              key={c.id}
+              title={c.messages[0].content}
+              conversationId={c.id}
+              onSelect={setSelectedConversationId}
+            />
           ))
         : null}
       <DeleteConvBtn />
